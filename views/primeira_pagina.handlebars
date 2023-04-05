@@ -1,0 +1,49 @@
+    <div class="container w-100">
+      <header class="d-flex align-items-center bg-primary p-1">
+        <nav class="navbar navbar-expand-lg bg-body-">
+          <div class="container-fluid">
+            <a class="navbar-brand text-white fs-2" href="#" >Sistema WEB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon shadow"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link text-white" aria-current="page" href="#">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Consultar</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="bg-white p-4">
+        <h2>Cadastrar - Agendamento de potenciais clientes</h2>
+        <p>Sistema utilizado para agendamentos de serviços.</p>
+        <form action="/cadastrar" method="post" class="d-flex flex-column">
+          <label class="mt-4 mb-4">Nome:
+            <input type="name" name="nome" id="nome" class="form-control form-control-sm shadow-none">
+          </label>
+          <label class="mb-4">Telefone:
+            <input type="number" name="telefone" id="telefone" class="clearfix form-control form-control-sm shadow-none">
+          </label>
+          <label class="mb-4">Origem:
+            <select name="origem" id="origem" class="form-select form-select-sm shadow-none">
+              <option value="selecione" disabled selected>Selecione</option>
+              <option value="celular">Celular</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="telefone fixo">Telefone Fixo</option>
+            </select>
+          </label>
+          <label class="mb-4">Data do Contato:
+            <input type="date" name="data" id="data" class="form-control shadow-none form-control-sm">
+          </label>
+          <label class="mb-4">Observação:
+            <textarea name="observacao" id="observacao" class="form-control shadow-none"></textarea>
+          </label>
+        </form>
+        <button type="submit" class="btn bg-primary text-white">Cadastrar</button>
+      </main>
+    </div>
