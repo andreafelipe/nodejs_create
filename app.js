@@ -22,6 +22,14 @@ app.get("/consulta", function(req, res){
     })
 })
 
+app.get("/editar/:id", function(req, res){
+    post.findAll({where:{'id':req.params.id}}).then(function(post){
+        res.render("editar", {post})
+    }).catch(function(erro){
+        console.log("Erro ao excluir ou encontrar banco: " + erro)
+    })
+})
+
 app.get("/excluir/:id", function(req, res){
     post.destroy({where:{'id':req.params.id}}).then(function(){
         res.render("primeira_pagina")
@@ -41,6 +49,22 @@ app.post("/cadastrar", function(req, res){
         res.redirect("/")
     }).catch(function(erro){
         res.send("Falha ao cadastrar os dados: " + erro)
+    })
+})
+
+app.post("/atualizar", function(req, res){
+    post.update({
+        nome: req.body.nome,
+        telefone: req.body.telefone,
+        origem: req.body.origem,
+        data_contato: req.body.data_contato,
+        observacao: req.body.observacao
+    },{
+        where: {
+            id: req.body.id
+        }
+    }).then(function(){
+        res.redirect("/consulta")
     })
 })
 
